@@ -2,6 +2,14 @@
 
 
 <h1>New book</h1>
+<h1>画像投稿フォーム</h1>
+<%= form_with model: @book, local:true do |f| %>
+  <h4>本</h4>
+  <%= f.text_field :title %>
+  <h4>内容</h4>
+  <%= f.text_area :body %>
+  <%= f.submit '投稿' %>
+<% end %>
 
 
 <h1>Books</h1>
