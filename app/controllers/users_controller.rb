@@ -6,6 +6,12 @@ class UsersController < ApplicationController
     # 個人の投稿のみ表示＝＞5章のページング
     # 新規投稿時
     @book = Book.new
+    @books = Book.where(user_id: @user.id)
+  end
+  
+  
+  def new
+    @user = User.new
   end
   
   def edit
@@ -23,4 +29,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name,:profile_image,:introduction)  
   end
+  
 end
