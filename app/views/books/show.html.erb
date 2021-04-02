@@ -1,5 +1,17 @@
-<div>
-  <p>投稿ユーザー画像：<%= image_tag('sample-author1.jpg') %></p>
-  <p>本：<%= @book.title %></p>
-  <p>内容：<%= @book.body %></p>
-</div>
+<div class="col-md-8 offset-md-1">
+    <h2>Book detail</h2>
+     <table class="table">
+      <tbody>
+       <tr>
+      　<%= attachment_image_tag @user, :profile_image, size:'100x100' %>
+        <td><%=link_to @user.name%></td>
+        <td><%=link_to @book.title , edit_book_path %></td>
+        <td><%= @book.body%></td>
+        <td><%=link_to "Edit", edit_book_path ,class:"btn btn-sm btn-success" %></td>
+        <% if @book.user == current_user %>
+        <td><%=link_to "Destroy", books_path, class:"btn btn-sm btn-danger" %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+ </div>
