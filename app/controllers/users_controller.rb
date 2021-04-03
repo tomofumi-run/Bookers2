@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
-  
+    
   def show
     @user = User.find(params[:id])
     @book = Book.new
     @books = @user.books
-    # binding.pry
-    # Book.where(user_id: @user.id)
   end
   
   
