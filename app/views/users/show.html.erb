@@ -1,0 +1,30 @@
+<main>
+ <div class="container px-5 px-sam-0">
+  <div class="row">
+   <%= render 'books/list', books: @books %>
+  <!--Bookdetailの部分-->
+  <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+       <table class="table table-hover table-inverse">
+         <thead>
+          <tr>
+           <th></th>
+           <th>Title</th>
+           <th>Opinion</th>
+           <th colspan="3"></th>
+          </tr>
+         </thead>
+        <% @books.each do |book|%>
+        <tbody>
+         <tr>
+        　<td><%= attachment_image_tag book.user, :profile_image, size:'100x100' %></td>        
+          <td><%= link_to book.title, book_path(book.id)%></td>
+          <td><%= book.body%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+   </div>
+  </div>
+ </div>
+</main>
