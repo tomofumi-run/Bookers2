@@ -4,14 +4,14 @@
    <!--user_info-->
    <%= render 'books/list', books: @books %>
    
-   自分のbook
+   <!--new book-->
    <div class="col-md-8 offset-md-1">
     <h2>Book</h2>
      <table class="table">
       <tbody>
        <tr>
       　<%= attachment_image_tag @book.user, :profile_image, size:'100x100' %>
-        <td><%=link_to @book.user.name%></td>
+        <td><%=link_to @book.user.name, user_path(current_user.id) %></td>
         <td><%=link_to @book.title, edit_book_path %></td>
         <td><%= @book.body%></td>
         <td><%=link_to "Edit", edit_book_path,class:"btn btn-sm btn-success" %></td>
