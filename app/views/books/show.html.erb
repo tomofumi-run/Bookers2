@@ -1,4 +1,11 @@
-<div class="col-md-8 offset-md-1">
+<main>
+ <div class="container px-5 px-sam-0">
+  <div class="row">
+   <!--user_info-->
+   <%= render 'books/list', books: @books %>
+   
+   自分のbook
+   <div class="col-md-8 offset-md-1">
     <h2>Book</h2>
      <table class="table">
       <tbody>
@@ -14,4 +21,7 @@
       </tr>
     </tbody>
   </table>
- </div>
+  </div>
+  </div>
+  </div>
+ </main>
