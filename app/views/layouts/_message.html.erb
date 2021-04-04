@@ -1,3 +1,6 @@
-<% if user_signed_in? %>
-  <a href="/portal" class="navbar-brand">Logo</a>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>
+  <% @book.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
 <% end %>
