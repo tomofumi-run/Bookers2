@@ -20,7 +20,7 @@
   
   <!--New Bookの部分-->
    <h2 class="mt-3">New book</h2>
-    <%= form_with model:@book, local:true do |f| %>
+    <%= form_with model:@new_book, local:true do |f| %>
    <div class="form-group">
     <%= f.label "Title" %></br>
     <%= f.text_field :title, class: "col-xs-12 form-control book_title" %>
