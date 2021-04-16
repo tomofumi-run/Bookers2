@@ -1,4 +1,8 @@
 class BooksController < ApplicationController
+
+include Typenews
+before_action :set_news
+
   
   def create
     @book = Book.new(book_params)
@@ -17,14 +21,12 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    @new_book = Book.new
     @user = current_user
   end
 
 
   def show
     @book = Book.find(params[:id])
-    @new_book = Book.new
     @user = @book.user
   end
   
